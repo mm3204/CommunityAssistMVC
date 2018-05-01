@@ -20,10 +20,10 @@ namespace CommunityAssistMVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Index([Bind(Include = "LastName," + "FirstName," + "Email," + "Phone," + "PlainPassword," + "Apartment," + "Street," + "City," + "State," + "Zipcode")]NewPerson r)
+        public ActionResult Index([Bind(Include = "LastName," + "FirstName," + "Email," + "PlainPassword," + "Apartment," + "Street," + "City," + "State," + "Zipcode," + "Phone")]NewPerson r)
         {
             Message m = new Message();
-            int result = db.usp_Register(r.LastName, r.FirstName, r.Email, r.Phone, r.PlainPassword, r.Apartment, r.Street, r.City, r.State, r.Zipcode);
+            int result = db.usp_Register(r.LastName, r.FirstName, r.Email, r.PlainPassword, r.Apartment, r.Street, r.City, r.State, r.Zipcode, r.Phone);
             if (result != -1)
             {
                 m.MessageText = "Welcome, " + r.Email;
