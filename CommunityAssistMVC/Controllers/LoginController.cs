@@ -30,7 +30,7 @@ namespace CommunityAssistMVC.Controllers
                             where r.PersonEmail.Equals(lc.UserName)
                             select r.PersonKey).FirstOrDefault();
                 revKey = (int)pkey;
-                Session["ReviewerKey"] = revKey;
+                Session["PersonKey"] = revKey;
 
                 msg.MessageText = "Welcome, " + lc.UserName;
             }
